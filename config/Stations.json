@@ -1,0 +1,336 @@
+[
+	{
+		"name": "12th St. Oakland City Center",
+		"abbr": "12TH",
+		"latitude": "37.803768",
+		"longitude": "-122.271450",
+		"trains": []
+	},
+	{
+		"name": "16th St. Mission",
+		"abbr": "16TH",
+		"latitude": "37.765062",
+		"longitude": "-122.419694",
+		"trains": []
+	},
+	{
+		"name": "19th St. Oakland",
+		"abbr": "19TH",
+		"latitude": "37.808350",
+		"longitude": "-122.268602",
+		"trains": []
+	},
+	{
+		"name": "24th St. Mission",
+		"abbr": "24TH",
+		"latitude": "37.752470",
+		"longitude": "-122.418143",
+		"trains": []
+	},
+	{
+		"name": "Antioch",
+		"abbr": "ANTC",
+		"latitude": "37.995388",
+		"longitude": "-121.780420",
+		"trains": []
+	},
+	{
+		"name": "Ashby",
+		"abbr": "ASHB",
+		"latitude": "37.852803",
+		"longitude": "-122.270062",
+		"trains": []
+	},
+	{
+		"name": "Balboa Park",
+		"abbr": "BALB",
+		"latitude": "37.721585",
+		"longitude": "-122.447506",
+		"trains": []
+	},
+	{
+		"name": "Bay Fair",
+		"abbr": "BAYF",
+		"latitude": "37.696924",
+		"longitude": "-122.126514",
+		"trains": []
+	},
+	{
+		"name": "Castro Valley",
+		"abbr": "CAST",
+		"latitude": "37.690746",
+		"longitude": "-122.075602",
+		"trains": []
+	},
+	{
+		"name": "Civic Center/UN Plaza",
+		"abbr": "CIVC",
+		"latitude": "37.779732",
+		"longitude": "-122.414123",
+		"trains": []
+	},
+	{
+		"name": "Coliseum",
+		"abbr": "COLS",
+		"latitude": "37.753661",
+		"longitude": "-122.196869",
+		"trains": []
+	},
+	{
+		"name": "Colma",
+		"abbr": "COLM",
+		"latitude": "37.684638",
+		"longitude": "-122.466233",
+		"trains": []
+	},
+	{
+		"name": "Concord",
+		"abbr": "CONC",
+		"latitude": "37.973737",
+		"longitude": "-122.029095",
+		"trains": []
+	},
+	{
+		"abbr": "DALY",
+		"latitude": "37.706121",
+		"longitude": "-122.469081",
+		"trains": []
+	},
+	{
+		"name": "Downtown Berkeley",
+		"abbr": "DBRK",
+		"latitude": "37.870104",
+		"longitude": "-122.268133",
+		"trains": []
+	},
+	{
+		"name": "Dublin/Pleasanton",
+		"abbr": "DUBL",
+		"latitude": "37.701687",
+		"longitude": "-121.899179",
+		"trains": []
+	},
+	{
+		"name": "El Cerrito del Norte",
+		"abbr": "DELN",
+		"latitude": "37.925086",
+		"longitude": "-122.316794",
+		"trains": []
+	},
+	{
+		"name": "El Cerrito Plaza",
+		"abbr": "PLZA",
+		"latitude": "37.902632",
+		"longitude": "-122.298904",
+		"trains": []
+	},
+	{
+		"name": "Embarcadero",
+		"abbr": "EMBR",
+		"latitude": "37.792874",
+		"longitude": "-122.397020",
+		"trains": []
+	},
+	{
+		"name": "Fremont",
+		"abbr": "FRMT",
+		"latitude": "37.557465",
+		"longitude": "-121.976608",
+		"trains": []
+	},
+	{
+		"name": "Fruitvale",
+		"abbr": "FTVL",
+		"latitude": "37.774836",
+		"longitude": "-122.224175",
+		"trains": []
+	},
+	{
+		"name": "Glen Park",
+		"abbr": "GLEN",
+		"latitude": "37.733064",
+		"longitude": "-122.433817",
+		"trains": []
+	},
+	{
+		"name": "Hayward",
+		"abbr": "HAYW",
+		"latitude": "37.669723",
+		"longitude": "-122.087018",
+		"trains": []
+	},
+	{
+		"name": "Lafayette",
+		"abbr": "LAFY",
+		"latitude": "37.893176",
+		"longitude": "-122.124630",
+		"trains": []
+	},
+	{
+		"name": "Lake Merritt",
+		"abbr": "LAKE",
+		"latitude": "37.797027",
+		"longitude": "-122.265180",
+		"trains": []
+	},
+	{
+		"name": "MacArthur",
+		"abbr": "MCAR",
+		"latitude": "37.829065",
+		"longitude": "-122.267040",
+		"trains": []
+	},
+	{
+		"name": "Millbrae",
+		"abbr": "MLBR",
+		"latitude": "37.600271",
+		"longitude": "-122.386702",
+		"trains": []
+	},
+	{
+		"name": "Montgomery St.",
+		"abbr": "MONT",
+		"latitude": "37.789405",
+		"longitude": "-122.401066",
+		"trains": []
+	},
+	{
+		"name": "North Berkeley",
+		"abbr": "NBRK",
+		"latitude": "37.873967",
+		"longitude": "-122.283440",
+		"trains": []
+	},
+	{
+		"name": "North Concord/Martinez",
+		"abbr": "NCON",
+		"latitude": "38.003193",
+		"longitude": "-122.024653",
+		"trains": []
+	},
+	{
+		"name": "Oakland International Airport",
+		"abbr": "OAKL",
+		"latitude": "37.713238",
+		"longitude": "-122.212191",
+		"trains": []
+	},
+	{
+		"name": "Orinda",
+		"abbr": "ORIN",
+		"latitude": "37.878361",
+		"longitude": "-122.183791",
+		"trains": []
+	},
+	{
+		"name": "Pittsburg/Bay Point",
+		"abbr": "PITT",
+		"latitude": "38.018914",
+		"longitude": "-121.945154",
+		"trains": []
+	},
+	{
+		"name": "Pittsburg Center",
+		"abbr": "PCTR",
+		"latitude": "38.016941",
+		"longitude": "-121.889457",
+		"trains": []
+	},
+	{
+		"name": "Pleasant Hill/Contra Costa Centre",
+		"abbr": "PHIL",
+		"latitude": "37.928468",
+		"longitude": "-122.056012",
+		"trains": []
+	},
+	{
+		"name": "Powell St.",
+		"abbr": "POWL",
+		"latitude": "37.784471",
+		"longitude": "-122.407974",
+		"trains": []
+	},
+	{
+		"name": "Richmond",
+		"abbr": "RICH",
+		"latitude": "37.936853",
+		"longitude": "-122.353099",
+		"trains": []
+	},
+	{
+		"name": "Rockridge",
+		"abbr": "ROCK",
+		"latitude": "37.844702",
+		"longitude": "-122.251371",
+		"trains": []
+	},
+	{
+		"name": "San Bruno",
+		"abbr": "SBRN",
+		"latitude": "37.637761",
+		"longitude": "-122.416287",
+		"trains": []
+	},
+	{
+		"name": "San Francisco International Airport",
+		"abbr": "SFIA",
+		"latitude": "37.615966",
+		"longitude": "-122.392409",
+		"trains": []
+	},
+	{
+		"name": "San Leandro",
+		"abbr": "SANL",
+		"latitude": "37.721947",
+		"longitude": "-122.160844",
+		"trains": []
+	},
+	{
+		"name": "South Hayward",
+		"abbr": "SHAY",
+		"latitude": "37.634375",
+		"longitude": "-122.057189",
+		"trains": []
+	},
+	{
+		"name": "South San Francisco",
+		"abbr": "SSAN",
+		"latitude": "37.664245",
+		"longitude": "-122.443960",
+		"trains": []
+	},
+	{
+		"abbr": "UCTY",
+		"latitude": "37.590630",
+		"longitude": "-122.017388",
+		"trains": []
+	},
+	{
+		"name": "Walnut Creek",
+		"abbr": "WCRK",
+		"latitude": "37.905522",
+		"longitude": "-122.067527",
+		"trains": []
+	},
+	{
+		"name": "Warm Springs/South Fremont",
+		"abbr": "WARM",
+		"latitude": "37.502171",
+		"longitude": "-121.939313",
+		"trains": []
+	},
+	{
+		"name": "West Dublin/Pleasanton",
+		"abbr": "WDUB",
+		"latitude": "37.699756",
+		"longitude": "-121.928240",
+		"trains": []
+	},
+	{
+		"name": "West Oakland",
+		"abbr": "WOAK",
+		"latitude": "37.804872",
+		"longitude": "-122.295140",
+		"trains": []
+	}
+]
