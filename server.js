@@ -16,7 +16,7 @@ const bartAPI = require("./server-scripts/accessBartAPI");
 // io.set('origins', 'http://localhost:3000 http://192.168.65.2:3000 http://10.0.1.59:3000 http://127.0.0.1:3000');
 
 io.on('connection', client => {
-	console.log("Client connected: " + client);
+	console.log("Client connected: " + client.id);
 	client.station = null;
 	client.on('stationRequested', stationAbbr => onNewStationRequest(stationAbbr, client));
 });
@@ -27,7 +27,7 @@ function onNewStationRequest(stationAbbr, client) {
 	client.leave(client.station);
 	client.station = stationAbbr;
 	client.join(client.station);
-	console.log("Sending info for " + stationAbbr + " to client " + client);
+	console.log("Sending info for " + stationAbbr + " to client " + client.id);
 	sendUpdatedTrains(client, stationAbbr);
 }
 
@@ -46,8 +46,17 @@ function sendUpdatedTrains(client, stationAbbr) {
 //=======================================================================
 
 // check for new trains every 30 seconds
+function updateTrainSchedules() {
+	if(io.of('/').server.engine.clientsCount !== 0) {
+		console.log(io.of('/').server.engine.clientsCount);
+		bartAPI.getTrainETDs(io);
+	} else {
+		console.log("No clients connected: no need to ping BART server");
+	}
+}
+
 bartAPI.getTrainETDs(io);
-var checkBartAPI = setInterval(bartAPI.getTrainETDs, 30000, io);
+var checkBartInterval = setInterval(updateTrainSchedules, 30000);
 
 
 //start server listening
