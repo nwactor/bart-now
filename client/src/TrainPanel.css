@@ -1,0 +1,32 @@
+.TrainPanel {
+	width: 30%;
+	height: 50px;
+	background-color: #f7f8f9;
+	border: 1px solid gray;
+	border-radius: 10px;
+	margin-top: 2px;
+	margin-left: 2px;
+}
+
+.row1, .row2 {
+	margin-left: 5%;
+}
+
+.row1 {
+	height: 50%;
+	text-align: left;
+}
+
+.row2 {
+	display: flex;
+	justify-content: flex-start;
+	height: 50%;
+}
+
+.colorStripe {
+	width: 40%;
+	height: 10px;
+	border-radius: 20px;
+	margin-right: 5%;
+}
+
