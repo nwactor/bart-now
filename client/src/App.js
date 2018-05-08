@@ -38,7 +38,6 @@ class App extends Component {
       });
       this.setState({trains});
     });
-    this.socket.emit('stationRequested', '24TH');
   }
 
   loadUserPreferences() {
@@ -72,12 +71,18 @@ class App extends Component {
     var prevClosestStation = this.state.closestStation;
     if(closestStation !== prevClosestStation) {
       this.setState({closestStation});
+      
+      //if there isn't a pre-set station, automatically search 
+      //trains for the nearby station that was just found
+      if(this.state.currentStation === '') {
+        this.setState({currentStation: closestStation});
+        this.socket.emit('stationRequested', closestStation);
+      }
     }
   }
 
   getClosestStation() {
     var clientLocation = this.state.clientLocation;
-
 
     var closestFoundStation = stationLocations.reduce((closestStation, currentStation) => {
       var closestDist = distanceCalculator.calculateDistance(
@@ -104,8 +109,8 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">BART-Now development</h1>
+          <h2>{this.state.currentStation}</h2>
         </header>
         {trains.map((train, index) =>
           <TrainPanel
