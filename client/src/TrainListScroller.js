@@ -26,7 +26,7 @@ class TrainListScroller extends Component {
 	render() {
 		const trains = this.sortTrains(this.props.trains);
 		return(
-			<div className="trainstainer">
+			<div className="traintainer">
 				{trains.map((train, index) =>
 			        <TrainPanel
 			          	key={index}

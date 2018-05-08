@@ -1,3 +1,5 @@
-.trainstainer {
+.traintainer {
+	height: 74%;
 	width: 33%;
+	overflow-y: auto;
 }
