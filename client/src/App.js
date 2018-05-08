@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import AppHeader from './AppHeader';
 import TrainListScroller from './TrainListScroller';
 import SocketIOClient from 'socket.io-client';
 import distanceCalculator from './distanceCalculator';
@@ -105,14 +106,20 @@ class App extends Component {
     return closestFoundStation.abbr;
   }
 
+  // METHODS TO PASS DOWN TO CHILD COMPONENTS
+  
+  setCurrentStation(stationAbbr) {
+    this.setState({currentStation: stationAbbr});
+  }
+
   render() {
     const trains = this.state.trains;
     return (
       <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">BART-Now development</h1>
-          <h2>{this.state.currentStation}</h2>
-        </header>
+        <AppHeader 
+          currentStation={this.state.currentStation}
+          setCurrentStation={this.setCurrentStation.bind(this)}
+        />
         <TrainListScroller trains={trains}/>
       </div>
     );
