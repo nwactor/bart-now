@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import TrainListScroller from './TrainListScroller';
 import SocketIOClient from 'socket.io-client';
 import distanceCalculator from './distanceCalculator';
-import stationLocations from './static-data/StationLocations'
+import StationLocations from './static-data/StationLocations'
 
-import TrainPanel from "./TrainPanel";
 
 class App extends Component {
   state = {
@@ -26,7 +25,6 @@ class App extends Component {
   configureWebSocket() {
     this.socket = SocketIOClient('http://localhost:8080');
     this.socket.on('trainUpdate', trainData => {
-      console.log(trainData);
       var trains = [];
       trainData.forEach(destination => {
         destination.estimate.forEach((singleTrain, index) => {
@@ -36,6 +34,7 @@ class App extends Component {
           trains.push(train);
         });
       });
+      console.log(trains);
       this.setState({trains});
     });
   }
@@ -81,10 +80,12 @@ class App extends Component {
     }
   }
 
+  //CURRENTLY ONLY TAKING INTO ACCOUNT "AS THE CROW FLIES"
+  //Should move logic to its own file
   getClosestStation() {
     var clientLocation = this.state.clientLocation;
 
-    var closestFoundStation = stationLocations.reduce((closestStation, currentStation) => {
+    var closestFoundStation = StationLocations.reduce((closestStation, currentStation) => {
       var closestDist = distanceCalculator.calculateDistance(
         `${closestStation.latitude}, ${closestStation.longitude}`,
          clientLocation
@@ -112,15 +113,7 @@ class App extends Component {
           <h1 className="App-title">BART-Now development</h1>
           <h2>{this.state.currentStation}</h2>
         </header>
-        {trains.map((train, index) =>
-          <TrainPanel
-            key={index}
-            destination={train.destination}
-            color={train.hexcolor}
-            minutes={train.minutes}
-            delay={train.delay}
-          />
-        )}
+        <TrainListScroller trains={trains}/>
       </div>
     );
   }
