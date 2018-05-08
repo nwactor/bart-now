@@ -13,7 +13,7 @@ class TrainPanel extends Component {
 						className="colorStripe"
 						style={{backgroundColor: this.props.color}}>
 					</div>
-					<span>{this.props.minutes /*+ this.props.delay*/}</span>
+					<span>{this.props.minutes /*+ this.props.delay*/ + " min"}</span>
 				</div>
 			</div>
 		);
