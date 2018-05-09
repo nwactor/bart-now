@@ -6,10 +6,19 @@
 }
 
 .App-title {
-  font-size: 1.5em;
+	font-size: 1.5em;
 }
 
 .station-name-header {
 	display: inline;
-	margin-right: 10px;
+}
+
+#station-search-button {
+	height: 48px;
+	width: 48px;
+	border: none;
+	background-image: url("./search.png");
+	background-size: contain;
+	background-color: #062a63;
+	padding-bottom: 5px;
 }

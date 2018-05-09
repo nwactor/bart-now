@@ -109,7 +109,12 @@ class App extends Component {
   // METHODS TO PASS DOWN TO CHILD COMPONENTS
   
   setCurrentStation(stationAbbr) {
-    this.setState({currentStation: stationAbbr});
+    if(stationAbbr !== '') {
+      this.setState({currentStation: stationAbbr});
+    } else {
+      this.setState({currentStation: this.state.closestStation});
+    }
+    this.socket.emit('stationRequested', this.state.currentStation);
   }
 
   render() {
