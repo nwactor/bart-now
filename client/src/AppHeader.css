@@ -1,8 +1,9 @@
 .App-header {
   background-color: #222;
-  height: 20%;
   padding: 20px;
   color: white;
+  display: block;
+  overflow: auto;
 }
 
 .App-title {
