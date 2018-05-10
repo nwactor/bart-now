@@ -6,14 +6,13 @@ const io = socketio(server);
 const bartAPI = require("./server-scripts/accessBartAPI");
 
 //set up routes for serving html for web app
-// var routes = require("./routes/routes");
-// app.use("/", routes);
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static('client/build'));
+}
 
 //=======================================================================
 //=========================== socket handling ===========================
 //=======================================================================
-
-// io.set('origins', 'http://localhost:3000 http://192.168.65.2:3000 http://10.0.1.59:3000 http://127.0.0.1:3000');
 
 io.on('connection', client => {
 	console.log("Client connected: " + client.id);
@@ -42,7 +41,7 @@ function sendUpdatedTrains(client, stationAbbr) {
 }
 
 //=======================================================================
-//========================= end socket handling =========================
+//========================= Accessing BART API ==========================
 //=======================================================================
 
 // check for new trains every 30 seconds
@@ -59,7 +58,7 @@ bartAPI.getTrainETDs(io);
 var checkBartInterval = setInterval(updateTrainSchedules, 30000);
 
 
-//start server listening
+//================= Begin server listening (not app!) ===================
 
 const PORT = process.env.PORT || 8080;
 server.listen(PORT, function() {
