@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
+import SocketIOClient from 'socket.io-client';
+import StationLocator from './StationLocator';
 import AppHeader from './AppHeader';
 import TrainListScroller from './TrainListScroller';
-import SocketIOClient from 'socket.io-client';
-import distanceCalculator from './distanceCalculator';
-import StationLocations from './static-data/StationLocations'
 
 
 class App extends Component {
@@ -67,7 +66,7 @@ class App extends Component {
     console.log(parsedLocation);
     this.setState({clientLocation: parsedLocation});
     
-    var closestStation = this.getClosestStation();
+    var closestStation = StationLocator.getClosestStation(this.state.clientLocation);
     var prevClosestStation = this.state.closestStation;
     if(closestStation !== prevClosestStation) {
       this.setState({closestStation});
@@ -79,31 +78,6 @@ class App extends Component {
         this.socket.emit('stationRequested', closestStation);
       }
     }
-  }
-
-  //CURRENTLY ONLY TAKING INTO ACCOUNT "AS THE CROW FLIES"
-  //Should move logic to its own file
-  getClosestStation() {
-    var clientLocation = this.state.clientLocation;
-
-    var closestFoundStation = StationLocations.reduce((closestStation, currentStation) => {
-      var closestDist = distanceCalculator.calculateDistance(
-        `${closestStation.latitude}, ${closestStation.longitude}`,
-         clientLocation
-      );      
-      var currentDist = distanceCalculator.calculateDistance(
-        `${currentStation.latitude}, ${currentStation.longitude}`,
-        clientLocation
-      );
-
-      if(currentDist < closestDist) { 
-        return currentStation; 
-      }
-      else { 
-        return closestStation; 
-      }
-    });
-    return closestFoundStation.abbr;
   }
 
   // METHODS TO PASS DOWN TO CHILD COMPONENTS
