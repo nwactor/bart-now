@@ -4,28 +4,25 @@ import TrainPanel from "./TrainPanel";
 
 class TrainListScroller extends Component {
 	
-	//All of the 10s in parseInt are radixes, saying that we're parsing a base 10 int
+	//All of the 10s in parseInt are radixes, they say that we're parsing a base 10 int
 	sortTrains(trains) {
 		trains.sort((train1, train2) => {
-			var train1ETA = parseInt(parseInt(train1.minutes, 10) + parseInt(train1.delay, 10), 10); 
-			var train2ETA =	parseInt(parseInt(train2.minutes, 10) + parseInt(train2.delay, 10), 10);
-
-			if(parseInt(train1ETA, 10) === 'NaN' && parseInt(train2ETA, 10) === 'NaN') {
-		      	return 0;
-		    } else if(parseInt(train1ETA, 10) === 'NaN') {
-		      	return -1; //1 is proably 'leaving' so it goes first
-		    } else if(parseInt(train2ETA, 10) === 'NaN') {
-		      	return 1; //2 probably 'leaving'
+			var train1ETA = parseInt(parseInt(train1.minutes.trim(), 10) + parseInt(train1.delay.trim(), 10), 10); 
+			var train2ETA =	parseInt(parseInt(train2.minutes.trim(), 10) + parseInt(train2.delay.trim(), 10), 10);
+			if(isNaN(parseInt(train1ETA, 10))) { //1 is 'leaving' so it goes first
+		      	return -1;
+		    } else if(isNaN(parseInt(train2ETA, 10))) { //2 'leaving'
+		      	return 1;
 		    } else {
-		      	return Number(train1ETA) - Number(train2ETA); 
+		      	return train1ETA - train2ETA; 
 		    }
 		});
-		
-		return trains;
+		// console.log(trains);
 	}
 
 	render() {
-		const trains = this.sortTrains(this.props.trains);
+		const trains = this.props.trains.slice(); //clone the array because props can't change
+		this.sortTrains(trains);
 		return(
 			<div className="traintainer">
 				{trains.map((train, index) =>

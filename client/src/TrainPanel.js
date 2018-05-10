@@ -1,7 +1,25 @@
 import React, { Component } from 'react';
 import "./TrainPanel.css";
 
+
 class TrainPanel extends Component {
+	
+	getTimeRemaining() {
+		var minutes = this.props.minutes;
+		var delay = this.props.delay;
+
+		if(minutes === "Leaving") { return minutes; }
+		else {
+			var totalTime = parseInt(minutes, 10) + parseInt(delay, 10);
+			if(totalTime <= 60) {
+				return totalTime + " min";
+			} else {
+				console.log(totalTime);
+				return Math.floor(totalTime / 60) + " hour " + (totalTime % 60) + " min";
+			}
+		}
+	}
+
 	render() {
 		return (
 			<div className="TrainPanel">
@@ -13,7 +31,7 @@ class TrainPanel extends Component {
 						className="colorStripe"
 						style={{backgroundColor: this.props.color}}>
 					</div>
-					<span>{this.props.minutes /*+ this.props.delay*/ + " min"}</span>
+					<span>{this.getTimeRemaining()}</span>
 				</div>
 			</div>
 		);

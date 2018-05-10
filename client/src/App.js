@@ -34,7 +34,7 @@ class App extends Component {
           trains.push(train);
         });
       });
-      console.log(trains);
+      // console.log(trains);
       this.setState({trains});
     });
   }
@@ -61,21 +61,22 @@ class App extends Component {
     this.setState({geoInterval});
   }
 
-  onLocationFound(location) {
+  async onLocationFound(location) {
     var parsedLocation = location.coords.latitude + ',' + location.coords.longitude;
     console.log(parsedLocation);
-    this.setState({clientLocation: parsedLocation});
+    await this.setState({clientLocation: parsedLocation});
     
     var closestStation = StationLocator.getClosestStation(this.state.clientLocation);
     var prevClosestStation = this.state.closestStation;
     if(closestStation !== prevClosestStation) {
-      this.setState({closestStation});
+      await this.setState({closestStation});
       
       //if there isn't a pre-set station, automatically search 
       //trains for the nearby station that was just found
       if(this.state.currentStation === '') {
-        this.setState({currentStation: closestStation});
-        this.socket.emit('stationRequested', closestStation);
+        this.setState({currentStation: closestStation}, () => {
+          this.socket.emit('stationRequested', this.state.currentStation);
+        });
       }
     }
   }
@@ -84,11 +85,14 @@ class App extends Component {
   
   setCurrentStation(stationAbbr) {
     if(stationAbbr !== '') {
-      this.setState({currentStation: stationAbbr});
+      this.setState({currentStation: stationAbbr}, () => {
+        this.socket.emit('stationRequested', this.state.currentStation);
+      });
     } else {
-      this.setState({currentStation: this.state.closestStation});
+      this.setState({currentStation: this.state.closestStation}, () => {
+        this.socket.emit('stationRequested', this.state.currentStation);
+      });
     }
-    this.socket.emit('stationRequested', this.state.currentStation);
   }
 
   //END PROP METHODS
