@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import SocketIOClient from 'socket.io-client';
-import StationLocator from './StationLocator';
+import StationLocator from './helper-scripts/StationLocator';
 import AppHeader from './AppHeader';
 import TrainListScroller from './TrainListScroller';
 
@@ -80,7 +80,7 @@ class App extends Component {
     }
   }
 
-  // METHODS TO PASS DOWN TO CHILD COMPONENTS
+  // METHODS TO PASS DOWN AS PROPS TO CHILDREN
   
   setCurrentStation(stationAbbr) {
     if(stationAbbr !== '') {
@@ -90,6 +90,8 @@ class App extends Component {
     }
     this.socket.emit('stationRequested', this.state.currentStation);
   }
+
+  //END PROP METHODS
 
   render() {
     const trains = this.state.trains;

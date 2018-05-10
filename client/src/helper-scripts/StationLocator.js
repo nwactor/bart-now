@@ -1,4 +1,4 @@
-import StationLocations from './static-data/StationLocations';
+import StationLocations from '../static-data/StationLocations';
 import distanceCalculator from './distanceCalculator';
 
 class StationLocator {
