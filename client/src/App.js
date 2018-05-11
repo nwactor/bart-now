@@ -34,7 +34,7 @@ class App extends Component {
           trains.push(train);
         });
       });
-      // console.log(trains);
+      console.log(trains);
       this.setState({trains});
     });
   }
@@ -105,7 +105,17 @@ class App extends Component {
           currentStation={this.state.currentStation}
           setCurrentStation={this.setCurrentStation.bind(this)}
         />
-        <TrainListScroller trains={trains}/>
+        <div id="lower-section">
+          <div className="column" id="col1">
+             <TrainListScroller trains={trains}/>
+          </div>
+          <div className="column" id="col2">
+            <img src={require("./assets/BART_cc_map.png")} alt="BART station map" id="station-map"/>
+          </div>
+          <div className="column" id="col3">
+
+          </div>
+        </div>
       </div>
     );
   }

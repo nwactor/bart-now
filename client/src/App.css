@@ -4,16 +4,35 @@
   overflow-y: hidden;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+#lower-section {
+  max-height: 77%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 }
 
-.App-intro {
-  font-size: large;
+.column {
+  flex-basis: 32%;
+  min-width: 32%;
+  max-height: 100%;
+  min-height: 100%;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+#station-map {
+  max-width: 120%;
+}
+
+/* phone styles */
+@media screen and (max-width: 479px) {
+  #lower-section {
+    min-height: 79%;    
+    display: block;
+    overflow-y: auto;
+  }
+  #col1 {
+    display: block;
+  }
+  #col2 {
+    display: none;
+  }
 }

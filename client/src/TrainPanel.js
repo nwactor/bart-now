@@ -14,7 +14,6 @@ class TrainPanel extends Component {
 			if(totalTime <= 60) {
 				return totalTime + " min";
 			} else {
-				console.log(totalTime);
 				return Math.floor(totalTime / 60) + " hour " + (totalTime % 60) + " min";
 			}
 		}
