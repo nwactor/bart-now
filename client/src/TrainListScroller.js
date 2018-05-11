@@ -34,6 +34,7 @@ class TrainListScroller extends Component {
 			            delay={train.delay}
 			        />
 			    )}
+				{/*<button>(View More Trains)</button>*/}
 		    </div>
 		);
 	}
