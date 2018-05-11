@@ -10,6 +10,9 @@ if (process.env.NODE_ENV === 'production') {
   app.use(express.static('client/build'));
 }
 
+//variable to help logging
+var isDormant = false;
+
 //=======================================================================
 //=========================== socket handling ===========================
 //=======================================================================
@@ -21,6 +24,7 @@ io.on('connection', client => {
 	
 	//if the server has been dormant, it will start by sending old info to the client...
 	//so for the first client to wake it up, refresh the server's info and send it out again
+	isDormant = false;
 	if(io.of('/').server.engine.clientsCount === 1) {
 		bartAPI.getTrainETDs(io);
 	}
@@ -56,7 +60,10 @@ function updateTrainSchedules() {
 		console.log(io.of('/').server.engine.clientsCount);
 		bartAPI.getTrainETDs(io);
 	} else {
-		console.log("No clients connected: no need to ping BART server");
+		if(!isDormant) {
+			isDormant = true;
+			console.log("No clients connected, server going to sleep.");
+		}
 	}
 }
 
