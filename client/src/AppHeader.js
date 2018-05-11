@@ -8,7 +8,7 @@ class AppHeader extends Component {
 	render() {
 		return (
 			<header className="App-header">
-				<h1>BART Now</h1>
+				<h1 className="App-title">BART Now</h1>
 				<div className="search-row">
 					<h2 className="station-name-header">{StationNames[this.props.currentStation]}</h2>	
 					<StationDropdown setCurrentStation={this.props.setCurrentStation}/>

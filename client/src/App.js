@@ -112,9 +112,6 @@ class App extends Component {
           <div className="column" id="col2">
             <img src={require("./assets/BART_cc_map.png")} alt="BART station map" id="station-map"/>
           </div>
-          <div className="column" id="col3">
-
-          </div>
         </div>
       </div>
     );

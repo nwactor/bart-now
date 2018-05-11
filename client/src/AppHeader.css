@@ -1,20 +1,20 @@
 .App-header {
-  background-color: #222;
-  padding: 20px;
+  height: 14%;
+  width: 100%;
   color: white;
-  display: block;
-  overflow: auto;
+  background-color: #222;
 }
 
 .App-title {
 	font-size: 1.5em;
+	margin: 0;
 }
 
 .station-name-header {
-	display: inline;
+	margin: 0;
 }
 
-#station-search-button {
+/*#station-search-button {
 	height: 48px;
 	width: 48px;
 	border: none;
@@ -22,4 +22,4 @@
 	background-size: contain;
 	background-color: #062a63;
 	padding-bottom: 5px;
-}
+}*/
