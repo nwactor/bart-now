@@ -18,6 +18,12 @@ io.on('connection', client => {
 	console.log("Client connected: " + client.id);
 	client.station = null;
 	client.on('stationRequested', stationAbbr => onNewStationRequest(stationAbbr, client));
+	
+	//if the server has been dormant, it will start by sending old info to the client...
+	//so for the first client to wake it up, refresh the server's info and send it out again
+	if(io.of('/').server.engine.clientsCount === 1) {
+		bartAPI.getTrainETDs(io);
+	}
 });
 
 //make the client a reciever of the new station, instead of their old one
