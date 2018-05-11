@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import SocketIOClient from 'socket.io-client';
 import StationLocator from './helper-scripts/StationLocator';
+import apiHost from './helper-scripts/APIHost';
 import AppHeader from './AppHeader';
 import TrainListScroller from './TrainListScroller';
 
@@ -23,7 +24,7 @@ class App extends Component {
   }
 
   configureWebSocket() {
-    this.socket = SocketIOClient('http://localhost:8080');
+    this.socket = SocketIOClient(apiHost);
     this.socket.on('trainUpdate', trainData => {
       var trains = [];
       trainData.forEach(destination => {
