@@ -5,6 +5,7 @@ import StationLocator from './helper-scripts/StationLocator';
 import apiHost from './helper-scripts/APIHost';
 import AppHeader from './AppHeader';
 import TrainListScroller from './TrainListScroller';
+// import StationMapNavigator from './StationMapNavigator';
 
 
 class App extends Component {
