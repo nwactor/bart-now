@@ -37,6 +37,12 @@ class NavigationMap extends Component {
 		  });
 	}
 
+	componentShouldUpdate(nextProps) {
+		if(this.props.destination === nextProps.destination) {
+			return false;
+		}
+	}
+
 	componentDidUpdate() {
 		this.calcRoute(directionsService, directionsDisplay);
 	}
