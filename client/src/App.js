@@ -5,13 +5,14 @@ import StationLocator from './helper-scripts/StationLocator';
 import apiHost from './helper-scripts/APIHost';
 import AppHeader from './AppHeader';
 import TrainListScroller from './TrainListScroller';
-// import StationMapNavigator from './StationMapNavigator';
+import NavigationMap from './NavigationMap';
+import StationNames from './static-data/StationNames';
 
 
 class App extends Component {
     state = {
         trains: [],
-        currentTransportation: 'walk',
+        currentTravelMode: 'walking',
         currentStation: '',
         closestStation: '',
         clientLocation: null,
@@ -46,7 +47,7 @@ class App extends Component {
         var defaultStationPreference = localStorage.getItem('defaultStationPreference');
 
         if(defaultTravelPreference !== null) {
-            this.setState({currentTransportation: defaultTravelPreference});
+            this.setState({currentTravelMode: defaultTravelPreference});
         }
         if(defaultStationPreference !== null) {
             this.setState({currentStation: defaultStationPreference});
@@ -112,6 +113,13 @@ class App extends Component {
                         <TrainListScroller trains={trains}/>
                     </div>
                     <div className="column" id="col2">
+                        <NavigationMap
+                            clientLocation={this.state.clientLocation}
+                            destination={StationNames[this.state.currentStation]}
+                            currentTravelMode={this.state.currentTravelMode}
+                        />
+                    </div>
+                    <div className="column" id="col3">
                         <img 
                             src={require("./assets/BART_cc_map.png")}  
                             alt="BART station map" 

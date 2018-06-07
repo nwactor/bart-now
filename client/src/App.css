@@ -18,12 +18,12 @@
     min-height: 100%;
 }
 
-#col1 {
+#col1, #col2 {
     margin-right: 1%;
 }
 
 #station-map {
-    max-width: 120%;
+    max-width: 100%;
     max-height: 100%;
 }
 
@@ -37,7 +37,7 @@
     #col1 {
         display: block;
     }
-    #col2 {
+    #col2, #col3 {
         display: none;
     }
 }
