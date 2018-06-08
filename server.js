@@ -7,7 +7,7 @@ const bartAPI = require("./server-scripts/accessBartAPI");
 
 //set up routes for serving html for web app
 if (process.env.NODE_ENV === 'production') {
-  app.use(express.static('client/build'));
+  	app.use(express.static('client/build'));
 }
 
 //variable to help logging
