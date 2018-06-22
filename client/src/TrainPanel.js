@@ -10,7 +10,7 @@ class TrainPanel extends Component {
 
 		if(minutes === "Leaving") { return minutes; }
 		else {
-			var totalTime = parseInt(minutes, 10) + parseInt(delay, 10);
+			var totalTime = parseInt(minutes, 10) + Math.floor(parseInt(delay, 10) / 60);
 			if(totalTime <= 60) {
 				return totalTime + " min";
 			} else {
