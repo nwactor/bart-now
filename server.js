@@ -54,7 +54,7 @@ function sendUpdatedTrains(client, stationAbbr) {
 //========================= Accessing BART API ==========================
 //=======================================================================
 
-// check for new trains every 30 seconds
+// check for new trains every 5 seconds
 function updateTrainSchedules() {
 	if(io.of('/').server.engine.clientsCount !== 0) {
 		console.log(io.of('/').server.engine.clientsCount);
@@ -68,7 +68,7 @@ function updateTrainSchedules() {
 }
 
 bartAPI.getTrainETDs(io);
-var checkBartInterval = setInterval(updateTrainSchedules, 30000);
+var checkBartInterval = setInterval(updateTrainSchedules, 5000);
 
 
 //================= Begin server listening (not app!) ===================
