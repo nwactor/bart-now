@@ -14,7 +14,8 @@ class NavigationMap extends Component {
 	initMap() {
 		var mapOptions = {
 			zoom: 10,
-			center:  {lat: 37.75, lng: -122.3}
+			center:  {lat: 37.75, lng: -122.3},
+			disableDefaultUI: true
 		}
 		var map = new google.maps.Map(document.getElementById('map'), mapOptions);
 		directionsDisplay.setMap(map);
@@ -32,15 +33,16 @@ class NavigationMap extends Component {
 		    if (status === 'OK') {
 		      directionsDisplay.setDirections(response);
 		    } else {
-		      window.alert('Directions request failed due to ' + status);
+		      console.log('Directions request failed due to ' + status);
 		    }
 		  });
 	}
 
-	componentShouldUpdate(nextProps) {
+	shouldComponentUpdate(nextProps) {
 		if(this.props.destination === nextProps.destination) {
 			return false;
 		}
+		return true;
 	}
 
 	componentDidUpdate() {

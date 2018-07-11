@@ -8,7 +8,7 @@ class TrainPanel extends Component {
 		var minutes = this.props.minutes;
 		var delay = this.props.delay;
 
-		if(minutes === "Leaving") { return minutes; }
+		if(minutes === "Leaving") { return "Arrived"; }
 		else {
 			var totalTime = parseInt(minutes, 10) + Math.floor(parseInt(delay, 10) / 60);
 			if(totalTime <= 60) {

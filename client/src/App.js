@@ -12,7 +12,7 @@ import StationNames from './static-data/StationNames';
 class App extends Component {
     state = {
         trains: [],
-        currentTravelMode: 'walking',
+        currentTravelMode: 'driving',
         currentStation: '',
         closestStation: '',
         clientLocation: null,
