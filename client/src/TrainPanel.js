@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import "./TrainPanel.css";
+import "./css/TrainPanel.css";
 
 
 class TrainPanel extends Component {

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import "./TrainListScroller.css";
+import "./css/TrainListScroller.css";
 import TrainPanel from "./TrainPanel";
 
 class TrainListScroller extends Component {
