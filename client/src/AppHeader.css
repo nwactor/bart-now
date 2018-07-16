@@ -1,13 +1,21 @@
 .App-header {
-	height: 14%;
+	height: 90px;
 	width: 100%;
 	color: white;
 	background-color: #222;
+	display: flex;
+	flex-direction: column;
 }
 
 .App-title {
 	font-size: 1.5em;
 	margin: 0;
+}
+
+.station-row {
+	overflow-x: auto;
+	white-space: nowrap;
+	flex: 1;
 }
 
 .station-name-header {

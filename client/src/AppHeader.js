@@ -8,11 +8,14 @@ class AppHeader extends Component {
 	render() {
 		return (
 			<header className="App-header">
+				<div style={{flex: 1}}>
 				<h1 className="App-title">BART Now</h1>
-				<div className="search-row">
+				</div>
+				<div className="station-row">
 					<h2 className="station-name-header">{StationNames[this.props.currentStation]}</h2>	
+				</div>
+				<div style={{flex: 1}}>
 					<StationDropdown setCurrentStation={this.props.setCurrentStation}/>
-					{/*<button id="station-search-button"></button>*/}
 				</div>
 			</header>
 		);
